@@ -1,3 +1,5 @@
+import 'package:ddm_server/controller/data_base_controller.dart';
+
 import 'ddm_server.dart';
 
 /// This type initializes an application.
@@ -13,7 +15,8 @@ class DdmServerChannel extends ApplicationChannel {
   /// This method is invoked prior to [entryPoint] being accessed.
   @override
   Future prepare() async {
-    logger.onRecord.listen((rec) => print("$rec ${rec.error ?? ""} ${rec.stackTrace ?? ""}"));
+    logger.onRecord.listen(
+        (rec) => print("$rec ${rec.error ?? ""} ${rec.stackTrace ?? ""}"));
   }
 
   /// Construct the request channel.
@@ -23,17 +26,11 @@ class DdmServerChannel extends ApplicationChannel {
   ///
   /// This method is invoked after [prepare].
   @override
-  Controller get entryPoint {
-    final router = Router();
-
-    // Prefer to use `link` instead of `linkFunction`.
-    // See: https://aqueduct.io/docs/http/request_controller/
-    router
-      .route("/example")
-      .linkFunction((request) async {
-        return Response.ok({"key": "value"});
-      });
-
-    return router;
-  }
+  Controller get entryPoint => Router()
+      ..route("/data_base/cswec").link(
+        () => null,
+      )
+      ..route("/data_base/[:version]").link(
+        () => DataBaseController(),
+      );
 }
