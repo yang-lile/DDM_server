@@ -7,7 +7,7 @@ class DataBaseController extends ResourceController {
     // TOOD: get version from database
     int _version = 23;
     return Response.ok(
-      {
+      { 
         "result": _version,
       },
     );
