@@ -27,10 +27,10 @@ class DdmServerChannel extends ApplicationChannel {
   /// This method is invoked after [prepare].
   @override
   Controller get entryPoint => Router()
-      ..route("/data_base/cswec").link(
-        () => null,
-      )
-      ..route("/data_base/[:version]").link(
-        () => DataBaseController(),
-      );
+    ..route("/data_base/cswec").link(
+      () => null,
+    )
+    ..route("/data_base/[:version]").link(
+      () => DataBaseController(),
+    );
 }

@@ -86,6 +86,12 @@
       "languageVersion": "2.1"
     },
     {
+      "name": "hive",
+      "rootUri": "file:///C:/Users/lilua/AppData/Roaming/Pub/Cache/hosted/pub.flutter-io.cn/hive-1.4.4+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
       "name": "http",
       "rootUri": "file:///C:/Users/lilua/AppData/Roaming/Pub/Cache/hosted/pub.flutter-io.cn/http-0.12.2",
       "packageUri": "lib/",
@@ -371,10 +377,10 @@
       "name": "ddm_server",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.2"
     }
   ],
-  "generated": "2021-01-31T09:42:23.771481Z",
+  "generated": "2021-02-02T09:19:34.798383Z",
   "generator": "pub",
-  "generatorVersion": "2.12.0-272.0.dev"
+  "generatorVersion": "2.12.0-133.7.beta"
 }

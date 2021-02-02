@@ -1,14 +1,16 @@
 import 'package:ddm_server/ddm_server.dart';
 import 'package:aqueduct/aqueduct.dart';
+import 'package:ddm_server/single_box.dart';
+import 'package:hive/hive.dart';
 
 class DataBaseController extends ResourceController {
   @Operation.get()
-  FutureOr<Response> getDataBaseVersion() {
-    // TOOD: get version from database
-    int _version = 23;
+  FutureOr<Response> getDataBaseVersion() async {
+    final Box box =await SingleBox.instance.box;
+    final version = box.toMap()['version'] as int;
     return Response.ok(
-      { 
-        "result": _version,
+      {
+        "result": version,
       },
     );
   }
@@ -16,9 +18,8 @@ class DataBaseController extends ResourceController {
   @Operation.get('version')
   FutureOr<Response> checkDataBaseVersion(
       @Bind.path('version') int version) async {
-    // TOOD: get version from database
-    int _version = 23;
-
+    final Box box =await SingleBox.instance.box;
+    final _version = box.toMap()['version'] as int;
     if (version == _version) {
       return Response.ok(
         {
