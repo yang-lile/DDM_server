@@ -42,10 +42,4 @@ class DataBaseController extends ResourceController {
       );
     }
   }
-
-  // @Operation.post('id')
-  // FutureOr postDataBase(@Bind.path('id') int version) {
-  //   // final File file= File('./data_base_controller.dart');
-  //   return Response.ok({9: 9});
-  // }
 }
