@@ -28,7 +28,7 @@ class DataPath extends HiveObject {
   @HiveField(1)
   List<String> ruler;
 
-  // like '.exe' '.txt'
+  // like '.exe' '.txt', it often is null, unless files need special format.
   @HiveField(2)
   String suffix;
 }

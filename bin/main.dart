@@ -1,6 +1,8 @@
+import 'package:ddm_server/data_base_io/rulers.dart';
 import 'package:ddm_server/ddm_server.dart';
 
 Future main() async {
+  await Rulers.write();
   final app = Application<DdmServerChannel>()
     ..options.configurationFilePath = "config.yaml"
     ..options.port = 8888;
